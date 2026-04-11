@@ -19,8 +19,10 @@ export function findAnimalRank(averageMs: number, ranks: AnimalRank[]) {
 
 export function getResultLine(averageMs: number) {
   if (averageMs <= 180) return '벼락치기 치고는 꽤 빠른데요?'
-  if (averageMs <= 210) return '이 반응이면 시험범위 알림은 누구보다 빨리 보겠네요.'
-  if (averageMs <= 245) return '몸은 솔직하네요. 조금만 더 예열하면 더 빨라질 수 있어요.'
+  if (averageMs <= 220) return '이 반응이면 시험범위 알림은 누구보다 빨리 보겠네요.'
+  if (averageMs <= 260) return '일반인 기준으로는 꽤 괜찮은 편이에요. 손이 잘 따라오네요.'
+  if (averageMs <= 320) return '딱 평균권에서 안정적인 타입이에요. 급할 때도 크게 흔들리지 않겠네요.'
+  if (averageMs <= 380) return '조금 느긋한 편이지만, 익숙해지면 충분히 줄일 수 있는 구간이에요.'
   return '아직은 워밍업 단계예요. 한 번 더 하면 기록이 달라질지도 몰라요.'
 }
 
