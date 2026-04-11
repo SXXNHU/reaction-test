@@ -80,7 +80,7 @@ export default function Test1Page({ onComplete, onBack }: Props) {
     })
   }, [clearTimers, onComplete])
 
-  const spawnNext = useCallback((afterMs: number) => {
+  const spawnNext = useCallback(function scheduleNext(afterMs: number) {
     clearTimers()
     gapTimerRef.current = window.setTimeout(() => {
       if (roundRef.current >= TOTAL_ROUNDS) { finishGame(); return }
@@ -102,7 +102,7 @@ export default function Test1Page({ onComplete, onBack }: Props) {
         setRound(roundRef.current)
         if (roundRef.current >= TOTAL_ROUNDS) { finishGame(); return }
         const gap = GAP_MIN_MS + Math.random() * (GAP_MAX_MS - GAP_MIN_MS)
-        spawnNext(gap)
+        scheduleNext(gap)
       }, WINDOW_MS)
     }, afterMs)
   }, [clearTimers, finishGame, showFeedback])

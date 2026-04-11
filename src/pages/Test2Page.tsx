@@ -42,7 +42,7 @@ export default function Test2Page({ onComplete, onBack }: Props) {
   }, [])
 
   // ── Run a single trial ────────────────────────────────────────
-  const runTrial = useCallback((_num: number) => {
+  const runTrial = useCallback(() => {
     setLitCount(0)
     setFalseStart(false)
     setCurrentMs(null)
@@ -93,7 +93,7 @@ export default function Test2Page({ onComplete, onBack }: Props) {
       })
     } else {
       // Short break then next trial
-      timerRef.current = window.setTimeout(() => runTrial(updated.length), 1200)
+      timerRef.current = window.setTimeout(() => runTrial(), 1200)
     }
   }, [onComplete, runTrial])
 
@@ -185,7 +185,7 @@ export default function Test2Page({ onComplete, onBack }: Props) {
             <p className="cockpit-intro-warn">등이 켜지는 동안 누르면 False Start!</p>
             <button
               className="test-primary-btn"
-              onClick={() => { setPhase('running'); runTrial(0) }}
+              onClick={() => { setPhase('running'); runTrial() }}
               type="button"
             >
               READY
