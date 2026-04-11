@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { Test2Result } from '../App'
+import f1Cockpit from '../assets/f1-cockpit.png'
 
 const TOTAL_TRIALS   = 5
 const LIGHT_ON_MS    = 800   // time between each light illuminating
@@ -150,7 +151,7 @@ export default function Test2Page({ onComplete, onBack }: Props) {
       <div className="cockpit-stage">
         <div
           className="cockpit-bg"
-          style={{ backgroundImage: "url('/src/assets/f1-cockpit.jpg')" }}
+          style={{ backgroundImage: `url(${f1Cockpit})` }}
         />
         <div className="cockpit-overlay" />
 

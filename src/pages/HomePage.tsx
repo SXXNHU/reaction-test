@@ -1,3 +1,4 @@
+import f1Logo from '../assets/f1_logo.png'
 import type { ModeKey } from '../gameData'
 
 type Props = {
@@ -19,14 +20,10 @@ export default function HomePage({ onStartTest, onArena }: Props) {
       {/* ── HERO ─────────────────────────────── */}
       <section className="home-hero">
         <div className="home-video-wrap">
-          {/* 사용자가 f1-intro.mp4 파일을 src/assets/ 에 추가하면 재생됩니다 */}
-          <video
+          <img
             className="home-video"
-            src="/src/assets/f1-intro.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
+            src={f1Logo}
+            alt="Formula 1 logo"
           />
           <div className="home-video-overlay" />
         </div>
